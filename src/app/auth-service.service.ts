@@ -17,12 +17,8 @@ export class AuthService {
     return this.http.post<any>(this.baseUrl+'/Register', userData);
   }
   registerTeacher(userData: any ): Observable<any> {
-    const formData = new FormData();
-    formData.append('file', userData.file.name);
-    formData.append('registerRequest',JSON.stringify(userData))
-    // Append other form fields as needed
    
-    return this.http.post<any>(this.baseUrl+'/RegisterTeacher', formData);
+    return this.http.post<any>(this.baseUrl+'/RegisterTeacher', userData);
   }
   isLoggedIn(): boolean {
     // check if authentication token exists
