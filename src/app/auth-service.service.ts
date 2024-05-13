@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.post<any>(this.baseUrl+'/Register', userData);
   }
   registerTeacher(userData: any ): Observable<any> {
-   
+    
     return this.http.post<any>(this.baseUrl+'/RegisterTeacher', userData);
   }
   isLoggedIn(): boolean {

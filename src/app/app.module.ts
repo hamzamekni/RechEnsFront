@@ -33,6 +33,7 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    NgxDropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]
