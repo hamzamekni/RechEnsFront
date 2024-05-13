@@ -77,6 +77,23 @@
                             <span class="sp-before sp-after">Contact</span>
                             <h2>Contact With Us</h2>
                         </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="form-group">
+                                <i class='bx bx-file'></i>
+                                <!-- <input type="file" name="file" onchange=""  id="file" class="form-control" required placeholder="Your File's*"> -->
+                                <ngx-dropzone (change)="onSelect($event)">
+                                    <ngx-dropzone-label>
+                                        Drag And Drop Files
+                                    </ngx-dropzone-label>
+                                    <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+                                        <ngx-dropzone-label>
+                                            {{f.name}} {{f.type}}
+                                        </ngx-dropzone-label>
+                                    </ngx-dropzone-preview>
+                                </ngx-dropzone>
+                            </div>
+                            <button class="default-btn border-radius" (click)="uploadFiles()">Upload Files<i class='bx bx-plus'></i></button><br><br>
+                        </div>
 
                         <form id="contactForm" (ngSubmit)="registerTeacher()">
                             <div class="row">
@@ -126,31 +143,15 @@
                                         <textarea name="detailEnseigant"  [(ngModel)]="userData.detailEnseigant" class="form-control" id="detailEnseigant" cols="30" rows="8" required placeholder="Talk About You'r Self*"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-6">
-                                    <div class="form-group">
-                                        <i class='bx bx-file'></i>
-                                        <!-- <input type="file" name="file" onchange=""  id="file" class="form-control" required placeholder="Your File's*"> -->
-                                        <ngx-dropzone (change)="onSelect($event)">
-                                            <ngx-dropzone-label>
-                                                Drag And Drop Files
-                                            </ngx-dropzone-label>
-                                            <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-                                                <ngx-dropzone-label>
-                                                    {{f.name}} {{f.type}}
-                                                </ngx-dropzone-label>
-                                            </ngx-dropzone-preview>
-                                        </ngx-dropzone>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-lg-12 col-md-12">
-                                    <button class="default-btn border-radius" (click)="uploadFiles()">Upload Files<i class='bx bx-plus'></i></button>
-                                </div>
-                               
-                                <div class="col-lg-12 col-md-12">
+                                    <br><br>
                                     <button type="submit" class="default-btn border-radius">Send Message <i class='bx bx-plus'></i></button>
                                 </div>
+                               
                             </div>
                         </form>
+                      
                     </div>
                 </div>
             </div>
