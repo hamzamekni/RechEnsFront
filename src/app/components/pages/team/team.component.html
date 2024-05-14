@@ -3,11 +3,11 @@
 <div class="inner-banner">
     <div class="container">
         <div class="inner-title text-center">
-            <h3>Team</h3>
+            <h3>Teachers</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><i class='bx bx-chevron-right'></i></li>
-                <li>Team</li>
+                <li>Teachers</li>
             </ul>
         </div>
     </div>
@@ -23,17 +23,17 @@
 <div class="team-area-two pt-50 pb-70">
     <div class="container">
         <div class="section-title text-center">
-            <span class="sp-before sp-after">Team</span>
-            <h2 class="h2-color2">Meet Our Data Scientist to Grow Your Business</h2> 
+            <span class="sp-before sp-after">Teachers</span>
+            <h2 class="h2-color2">Meet Our Teachers That Could Help You</h2> 
         </div>
 
         <div class="row pt-45">
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" *ngFor="let teacher of allTeachers">
                 <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img7.jpg" alt="Images">
+                    <img [src]="teacher.uploadedUrls[0]" alt="Images">
                     <div class="content">
-                        <h3>Cristiono Kopper</h3>
-                        <span>Web Developer</span>
+                        <h3>{{ teacher.firstName }}</h3>
+                        <span>{{ teacher.detailEnseigant }}</span>
                         <ul class="social-link">
                             <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
                             <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
@@ -43,86 +43,9 @@
                     </div>
                 </div>
             </div>
+            
            
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img8.jpg" alt="Images">
-                    <div class="content">
-                        <h3>Jermin Jekson</h3>
-                        <span>Marketing Manager</span>
-                        <ul class="social-link">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img9.jpg" alt="Images">
-                    <div class="content">
-                        <h3>Hobler Jeain</h3>
-                        <span>General Manager</span>
-                        <ul class="social-link">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img10.jpg" alt="Images">
-                    <div class="content">
-                        <h3>Julfiker Jeain</h3>
-                        <span>CEO At Ostino</span>
-                        <ul class="social-link">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img11.jpg" alt="Images">
-                    <div class="content">
-                        <h3>Hobler Jeain</h3>
-                        <span>General Manager</span>
-                        <ul class="social-link">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card team-card-mt active">
-                    <img src="assets/img/team/team-img12.jpg" alt="Images">
-                    <div class="content">
-                        <h3>Julfiker Jeain</h3>
-                        <span>CEO At Ostino</span>
-                        <ul class="social-link">
-                            <li><a href="#" target="_blank"><i class='bx bxl-facebook'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-twitter'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-pinterest-alt'></i></a></li> 
-                            <li><a href="#" target="_blank"><i class='bx bxl-youtube'></i></a></li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
 
