@@ -3,11 +3,11 @@
 <div class="inner-banner">
     <div class="container">
         <div class="inner-title text-center">
-            <h3>Case Study</h3>
+            <h3>Teacher's</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><i class='bx bx-chevron-right'></i></li>
-                <li>Case Study</li>
+                <li>Teacher's</li>
             </ul>
         </div>
     </div>
@@ -28,36 +28,42 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Titre Demande</th>
-                    <th scope="col">Detail Demande</th>
-                    <th scope="col">Locale</th>
-                    <th scope="col">Prix Max</th>
-                    <th scope="col">Prix Min</th>
-                    <th scope="col">Statut Demande</th>
-                    <th scope="col">Adresse</th>
-                    <th scope="col">Matiere</th>
-                    <th scope="col">Etudiant</th>
-                    <th scope="col">Teacher</th>
+                    <th scope="col">Teacher ID</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Montant Non Payé</th>
+                    <th scope="col">Statut Etude Presentiel</th>
+                    <th scope="col">Detail Etude Presentiel</th>
+                    <th scope="col">Detail Enseignant</th>
+                    <th scope="col">Phone Number</th>
                     <!-- Add more headers as needed -->
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let demandeDeCour of demandesDeCours; let i = index">
+                  <tr *ngFor="let teacher of teachers; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ demandeDeCour.titre_demande }}</td>
-                    <td>{{ demandeDeCour.detail_demande }}</td>
-                    <td>{{ demandeDeCour.locale }}</td>
-                    <td>{{ demandeDeCour.prix_max }}</td>
-                    <td>{{ demandeDeCour.prix_min }}</td>
-                    <td>{{ demandeDeCour.statutDemande }}</td>
-                    <td>{{ demandeDeCour.adress.adress_Id }}</td> <!-- Assuming you want to display the whole address object -->
-                    <td>{{ demandeDeCour.matiere.matiere_Id }}</td> <!-- Assuming you want to display the whole matiere object -->
-                    <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td> <!-- Assuming you want to display the whole etudiant object -->
-                    <td>{{ demandeDeCour.teacher.teacherId }}</td> <!-- Assuming you want to display the whole teacher object -->
+                    <td>{{ teacher.teacherId }}</td>
+                    <td>{{ teacher.firstName }}</td>
+                    <td>{{ teacher.email }}</td>
+                    <td>{{ teacher.montant_non_paye }}</td>
+                    <td>{{ teacher.statut_etude_presentiel }}</td>
+                    <td>{{ teacher.Detail_Etude_Presentiel }}</td>
+                    <td>{{ teacher.detailEnseigant }}</td>
+                    <td>{{ teacher.phoneNumber }}</td>
                     <!-- Add more cells to display other properties as needed -->
+                    <td><button type="button" class="btn btn-outline-success">Update</button>
+                        <button type="button" class="btn btn-outline-danger">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
+              
+              
+              
+              
+              
+              
+              
               
               
 

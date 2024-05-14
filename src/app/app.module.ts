@@ -34,6 +34,17 @@ import { ContactComponent } from './components/pages/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
+import { AdressComponent } from './components/pages/adress/adress.component';
+import { EtudiantComponent } from './components/pages/etudiant/etudiant.component';
+import { MatiereComponent } from './components/pages/matiere/matiere.component';
+import { NiveauEtudeComponent } from './components/pages/niveau-etude/niveau-etude.component';
+import { PaiementComponent } from './components/pages/paiement/paiement.component';
+import { RecommendationComponent } from './components/pages/recommendation/recommendation.component';
+import { RegionComponent } from './components/pages/region/region.component';
+import { SupportCourComponent } from './components/pages/support-cour/support-cour.component';
+import { TeacherComponent } from './components/pages/teacher/teacher.component';
+import { UserComponent } from './components/pages/user/user.component';
+import { VilleComponent } from './components/pages/ville/ville.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +60,7 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     NavbarStyleThreeComponent,
     AboutComponent,
     NavbarStyleFourComponent,
+    AdressComponent,
     TeamComponent,
     PricingComponent,
     FaqComponent,
@@ -58,6 +70,16 @@ import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
     ErrorComponent,
     SignInComponent,
     SignUpComponent,
+    EtudiantComponent,
+    MatiereComponent,
+    NiveauEtudeComponent,
+    PaiementComponent,
+    RecommendationComponent,
+    RegionComponent,
+    SupportCourComponent,
+    TeacherComponent,
+    UserComponent,
+    VilleComponent,
     TermsConditionsComponent,
     PrivacyPolicyComponent,
     ComingSoonComponent,

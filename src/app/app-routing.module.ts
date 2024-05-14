@@ -22,6 +22,17 @@ import { BlogComponent } from './components/pages/blog/blog.component';
 import { BlogDetailsComponent } from './components/pages/blog-details/blog-details.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { AuthGuard } from './AuthGuard';
+import { AdressComponent } from './components/pages/adress/adress.component';
+import { RegionComponent } from './components/pages/region/region.component';
+import { VilleComponent } from './components/pages/ville/ville.component';
+import { UserComponent } from './components/pages/user/user.component';
+import { TeacherComponent } from './components/pages/teacher/teacher.component';
+import { SupportCourComponent } from './components/pages/support-cour/support-cour.component';
+import { RecommendationComponent } from './components/pages/recommendation/recommendation.component';
+import { PaiementComponent } from './components/pages/paiement/paiement.component';
+import { NiveauEtudeComponent } from './components/pages/niveau-etude/niveau-etude.component';
+import { MatiereComponent } from './components/pages/matiere/matiere.component';
+import { EtudiantComponent } from './components/pages/etudiant/etudiant.component';
 
 const routes: Routes = [
     {path: '', component: SignInComponent},
@@ -33,7 +44,20 @@ const routes: Routes = [
     {path: 'pricing', component: PricingComponent},
     {path: 'faq', component: FaqComponent},
     {path: 'testimonials', component: TestimonialsComponent},
+    
     {path: 'case-study', component: CaseStudyComponent},
+    {path: 'app-adress', component: AdressComponent},
+    {path: 'app-region', component: RegionComponent},
+    {path: 'app-ville', component: VilleComponent},
+    {path: 'app-user', component: UserComponent},
+    {path: 'app-teacher', component: TeacherComponent},
+    {path: 'app-support-cour', component: SupportCourComponent},
+    {path: 'app-recommendation', component: RecommendationComponent},
+    {path: 'app-paiement', component: PaiementComponent},
+    {path: 'app-niveau-etude', component: NiveauEtudeComponent},
+    {path: 'app-matiere', component: MatiereComponent},
+    {path: 'app-etudiant', component: EtudiantComponent},
+
     {path: 'case-study-details', component: CaseStudyDetailsComponent},
     {path: 'error', component: ErrorComponent},
     {path: 'sign-up', component: SignUpComponent},
