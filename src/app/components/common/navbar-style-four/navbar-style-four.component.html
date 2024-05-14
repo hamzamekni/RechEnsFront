@@ -1,8 +1,9 @@
 <div class="navbar-area">
     <div class="mobile-nav">
         <a routerLink="/" class="logo"><img src="assets/img/logo/logo1.png" alt="Logo"></a>
+        
     </div>
-    
+
     <div class="main-nav nav-bar-two">
         <div class="container-fluid">
             <nav class="container-max-2 navbar navbar-expand-md navbar-light ">
@@ -10,88 +11,47 @@
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Home <i class='bx bx-plus'></i></a>
+                        
 
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">SEO Agency</a></li>
+                        <ng-container *ngIf="isLoggedIn==false">
+                            <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home</a></li>
 
-                                <li class="nav-item"><a routerLink="/ai-startup" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">AI Startup</a></li>
+                            <li class="nav-item"><a routerLink="/sign-in" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Sign In</a></li>
+                            <li class="nav-item"><a routerLink="/sign-up" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Sign Up</a></li>
+                        </ng-container>
+                        
+                        
+                            <ng-container *ngIf="etudiant==true && isLoggedIn==true">
+                                <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home</a></li>
 
-                                <li class="nav-item"><a routerLink="/machine-learning" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Machine Learning</a></li>
-                            </ul>
-                        </li>
+                                <li class="nav-item"><a routerLink="/team" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Teacher's</a></li>
+                                <li class="nav-item"><a routerLink="/app-recommendation" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Recommendation's</a></li>
+                                <li class="nav-item"><a routerLink="/app-region" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Region's</a></li>
+                                <li class="nav-item"><a routerLink="/app-adress" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Adress's</a></li>
 
-                        <li class="nav-item"><a routerLink="/about" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">About Us</a></li>
+                            </ng-container>
+                            <ng-container *ngIf="teacher==true && isLoggedIn==true">
+                                <li class="nav-item"><a routerLink="/ai-startup" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home</a></li>
 
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Pages <i class='bx bx-plus'></i></a>
+                                <li class="nav-item"><a routerLink="/app-support-cour" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Suppor Cour's</a></li>
+                                <li class="nav-item"><a routerLink="/case-study" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Demandes De Cours</a></li>
+                                <li class="nav-item"><a routerLink="/app-niveau-etude" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Niveau d'étude's</a></li>
+                                <li class="nav-item"><a routerLink="/app-region" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Region's</a></li>
+                                <li class="nav-item"><a routerLink="/app-adress" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Adress's</a></li>
 
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/team" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Teachers</a></li>
+                            </ng-container>
+                            <ng-container *ngIf="admin==true && isLoggedIn==true">
+                                <li class="nav-item"><a routerLink="/ai-startup" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home</a></li>
 
-                                <li class="nav-item"><a routerLink="/pricing" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Pricing</a></li>
-
-                                <li class="nav-item"><a routerLink="/faq" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">FAQ</a></li>
-
-                                <li class="nav-item"><a routerLink="/testimonials" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Testimonials</a></li>
-
-                                <li class="nav-item">
-                                    <a href="javascript:void(0);" class="nav-link">Case study <i class='bx bx-plus'></i></a>
-
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a routerLink="/case-study" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Demandes De Cours</a></li>
-                                        <li class="nav-item"><a routerLink="/app-adress" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Adress's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-ville" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Ville's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-teacher" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Teacher's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-etudiant" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Etudian's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-support-cour" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Suppor Cour's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-user" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">User's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-paiement" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Paiement's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-region" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Region's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-recommendation" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Recommendation's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-matiere" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Matiere's</a></li>
-                                        <li class="nav-item"><a routerLink="/app-niveau-etude" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Niveau d'étude's</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a routerLink="/error" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">404 Error</a></li>
-
-                                <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Sign In</a></li>
-
-                                <li class="nav-item"><a routerLink="/sign-up" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Sign Up</a></li>
-
-                                <li class="nav-item"><a routerLink="/terms-conditions" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Terms & Conditions</a></li>
-
-                                <li class="nav-item"><a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Privacy Policy</a></li>
-
-                                <li class="nav-item"><a routerLink="/coming-soon" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Coming Soon</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Services <i class='bx bx-plus'></i></a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/services" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Services</a></li>
-
-                                <li class="nav-item"><a routerLink="/services-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Services Details</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">Blog <i class='bx bx-plus'></i></a>
-
-                            <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/blog" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog</a></li>
-
-                                <li class="nav-item"><a routerLink="/blog-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog Details</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item"><a routerLink="/contact" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Contact Us</a></li>
+                                <li class="nav-item"><a routerLink="/app-matiere" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Matiere's</a></li>
+                                <li class="nav-item"><a routerLink="/app-ville" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Ville's</a></li>
+                                <li class="nav-item"><a routerLink="/app-teacher" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Teacher's</a></li>
+                                <li class="nav-item"><a routerLink="/app-etudiant" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Etudian's</a></li>
+                                <li class="nav-item"><a routerLink="/app-user" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">User's</a></li>
+                                <li class="nav-item"><a routerLink="/app-paiement" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Paiement's</a></li>
+                            </ng-container>
+                       
                     </ul>
-
                     <div class="side-nav d-in-line align-items-center">
                         <div class="side-item">
                             <div class="search-box">
@@ -99,13 +59,13 @@
                             </div>
                         </div>
                         <div class="side-item">
-                            <div class="user-btn">
-                                <a routerLink="/"><i class="flaticon-contact"></i></a>
+                            <div class="user-btn" (click)="logout()">
+                                <a routerLink="/sign-in"><i class="flaticon-contact"></i></a>
                             </div>
                         </div>
                         <div class="side-item">
                             <div class="nav-add-btn">
-                                <a routerLink="/contact" class="nav-menu-btn">Be A Teacher <i class='bx bx-plus'></i></a>
+                                <a routerLink="/contact" class="nav-menu-btn">Be A Teacher<i class='bx bx-plus'></i></a>
                             </div>
                         </div>
                     </div>
@@ -139,7 +99,7 @@
                         </div>
                         <div class="side-item">
                             <div class="nav-add-btn">
-                                <a routerLink="/contact" class="nav-menu-btn">Contact Us <i class='bx bx-plus'></i></a>
+                                <a routerLink="/contact" class="nav-menu-btn">Be A Teacher <i class='bx bx-plus'></i></a>
                             </div>
                         </div>
                     </div>

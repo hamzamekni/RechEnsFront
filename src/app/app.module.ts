@@ -45,6 +45,7 @@ import { SupportCourComponent } from './components/pages/support-cour/support-co
 import { TeacherComponent } from './components/pages/teacher/teacher.component';
 import { UserComponent } from './components/pages/user/user.component';
 import { VilleComponent } from './components/pages/ville/ville.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
