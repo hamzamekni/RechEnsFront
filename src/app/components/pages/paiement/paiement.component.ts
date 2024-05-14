@@ -20,5 +20,12 @@ export class PaiementComponent implements OnInit {
     this.paiementService.getPaiementsList()
       .subscribe(paiements => this.paiements = paiements);
   }
-}
 
+  deletePaiement(paiementId: number): void {
+    this.paiementService.deletePaiement(paiementId)
+      .subscribe(() => {
+        // Remove the deleted payment from the payments array
+        this.paiements = this.paiements.filter(paiement => paiement.paiementId !== paiementId);
+      });
+  }
+}

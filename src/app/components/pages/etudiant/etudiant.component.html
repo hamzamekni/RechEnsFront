@@ -45,8 +45,8 @@
                     <td>{{ etudiant.users.userId }}</td> <!-- Assuming you want to display the user's ID -->
                     <!-- Add more cells to display other properties as needed -->
                     <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button></td>
-                  </tr>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteEtudiant(etudiant.etudiant_Id)">Delete</button>
+                    </tr>
                 </tbody>
               </table>
               

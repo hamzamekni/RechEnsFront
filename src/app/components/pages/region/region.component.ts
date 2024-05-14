@@ -20,5 +20,12 @@ export class RegionComponent implements OnInit {
     this.regionService.getRegionList()
       .subscribe(regions => this.regions = regions);
   }
-}
 
+  deleteRegion(regionId: number): void {
+    this.regionService.deleteRegion(regionId)
+      .subscribe(() => {
+        // Remove the deleted region from the regions array
+        this.regions = this.regions.filter(region => region.region_Id !== regionId);
+      });
+  }
+}

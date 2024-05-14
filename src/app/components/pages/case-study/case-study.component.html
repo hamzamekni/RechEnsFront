@@ -38,6 +38,7 @@
                     <th scope="col">Matiere</th>
                     <th scope="col">Etudiant</th>
                     <th scope="col">Teacher</th>
+                    <th></th>
                     <!-- Add more headers as needed -->
                   </tr>
                 </thead>
@@ -55,7 +56,9 @@
                     <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td> <!-- Assuming you want to display the whole etudiant object -->
                     <td>{{ demandeDeCour.teacher.teacherId }}</td> <!-- Assuming you want to display the whole teacher object -->
                     <!-- Add more cells to display other properties as needed -->
-                  </tr>
+                    <td><button type="button" class="btn btn-outline-success">Update</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteDemandeDeCour(demandeDeCour.demandeDeCour_Id)">Delete</button>
+                    </tr>
                 </tbody>
               </table>
               

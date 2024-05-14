@@ -43,8 +43,8 @@
                     <td>{{ supportCour.type_cours }}</td>
                     <!-- Add more cells to display other properties as needed -->
                     <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button></td>
-                  </tr>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteSupportCour(supportCour.supportCour_Id)">Delete</button>
+                    </tr>
                 </tbody>
               </table>
               

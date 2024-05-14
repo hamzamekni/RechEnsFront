@@ -20,5 +20,12 @@ export class TeacherComponent implements OnInit {
     this.teacherService.getTeacherList()
       .subscribe(teachers => this.teachers = teachers);
   }
-}
 
+  deleteTeacher(teacherId: number): void {
+    this.teacherService.deleteTeacher(teacherId)
+      .subscribe(() => {
+        // Remove the deleted teacher from the teachers array
+        this.teachers = this.teachers.filter(teacher => teacher.teacherId !== teacherId);
+      });
+  }
+}

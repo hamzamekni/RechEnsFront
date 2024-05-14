@@ -43,8 +43,8 @@
                     <td>{{ address.region.region_Id }}</td> <!-- Assuming you want to display the whole region object -->
                     <!-- Add more cells to display other properties as needed -->
                     <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button></td>
-                  </tr>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteAddress(address.adress_Id)">Delete</button>
+                    </tr>
                 </tbody>
               </table>
               

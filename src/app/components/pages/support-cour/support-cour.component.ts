@@ -20,5 +20,12 @@ export class SupportCourComponent implements OnInit {
     this.supportCourService.getSupportCoursList()
       .subscribe(supportCours => this.supportCours = supportCours);
   }
-}
 
+  deleteSupportCour(id: number): void {
+    this.supportCourService.deleteSupportCour(id)
+      .subscribe(() => {
+        // Remove the deleted support cour from the supportCours array
+        this.supportCours = this.supportCours.filter(supportCour => supportCour.supportCour_Id !== id);
+      });
+  }
+}

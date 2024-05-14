@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Adress } from 'src/app/model/Adress'; // Import the Adress model
-import { AdressService } from 'src/app/adress.service'; // Import the AdressService
+import { Adress } from 'src/app/model/Adress';
+import { AdressService } from 'src/app/adress.service';
 
 @Component({
-  selector: 'app-adress', 
+  selector: 'app-adress',
   templateUrl: './adress.component.html',
-  styleUrls: ['./adress.component.scss'] // Correct the typo, it should be styleUrls
+  styleUrls: ['./adress.component.scss']
 })
 export class AdressComponent implements OnInit {
   addresses: Adress[] = [];
@@ -19,5 +19,13 @@ export class AdressComponent implements OnInit {
   getAddresses(): void {
     this.adressService.getAdressList()
       .subscribe(addresses => this.addresses = addresses);
+  }
+
+  deleteAddress(addressId: number): void {
+    this.adressService.deleteAdress(addressId)
+      .subscribe(() => {
+        // Remove the deleted address from the addresses array
+        this.addresses = this.addresses.filter(address => address.adress_Id !== addressId);
+      });
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Etudiant } from 'src/app/model/Etudiant'; // Import the Etudiant model
-import { EtudiantService } from 'src/app/etudiant.service'; // Import the EtudiantService
+import { Etudiant } from 'src/app/model/Etudiant';
+import { EtudiantService } from 'src/app/etudiant.service';
 
 @Component({
   selector: 'app-etudiant',
@@ -19,5 +19,13 @@ export class EtudiantComponent implements OnInit {
   getEtudiants(): void {
     this.etudiantService.getEtudiantList()
       .subscribe(etudiants => this.etudiants = etudiants);
+  }
+
+  deleteEtudiant(etudiantId: number): void {
+    this.etudiantService.deleteEtudiant(etudiantId)
+      .subscribe(() => {
+        // Remove the deleted student from the etudiants array
+        this.etudiants = this.etudiants.filter(etudiant => etudiant.etudiant_Id !== etudiantId);
+      });
   }
 }

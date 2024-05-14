@@ -20,5 +20,12 @@ export class RecommendationComponent implements OnInit {
     this.recommendationService.getRecommendationList()
       .subscribe(recommendations => this.recommendations = recommendations);
   }
-}
 
+  deleteRecommendation(recommendationId: number): void {
+    this.recommendationService.deleteRecommendation(recommendationId)
+      .subscribe(() => {
+        // Remove the deleted recommendation from the recommendations array
+        this.recommendations = this.recommendations.filter(recommendation => recommendation.recommendationId !== recommendationId);
+      });
+  }
+}

@@ -20,5 +20,12 @@ export class NiveauEtudeComponent implements OnInit {
     this.niveauEtudeService.getNiveauEtudesList()
       .subscribe(niveauxEtude => this.niveauxEtude = niveauxEtude);
   }
-}
 
+  deleteNiveauEtude(niveauEtudeId: number): void {
+    this.niveauEtudeService.deleteNiveauEtude(niveauEtudeId)
+      .subscribe(() => {
+        // Remove the deleted study level from the niveauxEtude array
+        this.niveauxEtude = this.niveauxEtude.filter(niveauEtude => niveauEtude.niveauEtude_Id !== niveauEtudeId);
+      });
+  }
+}

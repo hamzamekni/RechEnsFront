@@ -45,8 +45,8 @@
                     <td>{{ matiere.teacher.teacherId }}</td> <!-- Assuming teacherId is the property you want to display -->
                     <!-- Add more cells to display other properties as needed -->
                     <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger">Delete</button></td>
-                  </tr>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteMatiere(matiere.matiere_Id)">Delete</button>
+                    </tr>
                 </tbody>
               </table>
               
