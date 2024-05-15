@@ -48,6 +48,9 @@ import { VilleComponent } from './components/pages/ville/ville.component';
 import { CookieService } from 'ngx-cookie-service';
 import { UpdateAdressComponent } from './components/update/update-adress/update-adress/update-adress.component';
 import { UpdateDemandeDeCourComponent } from './components/update/update-demandeDeCour/update-demande-de-cour/update-demande-de-cour.component';
+import { UpdateTeacherComponent } from './components/update/update-teacher/update-teacher.component';
+import { UpdateMatiereComponent } from './components/update/update-matiere/update-matiere.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +95,9 @@ import { UpdateDemandeDeCourComponent } from './components/update/update-demande
     BlogComponent,
     UpdateAdressComponent,
     UpdateDemandeDeCourComponent,
+    UpdateTeacherComponent,
+    UpdateMatiereComponent,
+    ProfileComponent,
     ContactComponent
   ],
   imports: [

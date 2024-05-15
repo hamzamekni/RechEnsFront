@@ -1,0 +1,71 @@
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Update Matiere</h3>
+            <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>Update Matiere</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="contact-section pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-wrap">
+                    <div class="contact-form">
+                        <div class="section-title">
+                            <span class="sp-before sp-after">Update Matiere</span>
+                            <h2>Complete This Form To Update the Matiere</h2>
+                        </div>
+                        <form [formGroup]="updateMatiereForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="matiereId">Matiere ID</label>
+                                        <input type="text" formControlName="matiere_Id" id="matiereId" class="form-control" placeholder="Matiere ID" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="codeEtude">Code Etude</label>
+                                        <input type="number" formControlName="code_etude" id="codeEtude" class="form-control" required placeholder="Code Etude">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="matiereName">Matiere Name</label>
+                                        <input type="text" formControlName="matiere_name" id="matiereName" class="form-control" required placeholder="Matiere Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="niveauEtudeId">Niveau d'Étude ID</label>
+                                        <select formControlName="niveauEtude.niveauEtude_Id" id="niveauEtudeId" class="form-control" required>
+                                            <option *ngFor="let niveauEtudeId of niveauEtudeIds" [value]="niveauEtudeId">{{ niveauEtudeId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="teacherId">Teacher ID</label>
+                                        <select formControlName="teacher.teacherId" id="teacherId" class="form-control" required>
+                                            <option *ngFor="let teacherId of teacherIds" [value]="teacherId">{{ teacherId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Add more fields as necessary -->
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn border-radius">Update Matiere <i class='bx bx-plus'></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

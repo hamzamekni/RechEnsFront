@@ -1,0 +1,99 @@
+<div class="inner-banner">
+    <!-- Update the inner banner as needed -->
+</div>
+
+<div class="contact-section pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-wrap">
+                    <div class="contact-form">
+                        <div class="section-title">
+                            <span class="sp-before sp-after">Update Teacher</span>
+                            <h2>Complete This Form To Update the Teacher</h2>
+                        </div>
+                        <form [formGroup]="updateTeacherForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="teacherId">Teacher ID</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <input type="text" formControlName="teacherId" class="form-control" placeholder="Teacher ID" disabled readonly>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="firstName">First Name</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <input type="text" formControlName="firstName" class="form-control" required placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="email">Email</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="email" formControlName="email" class="form-control" required placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="montant_non_paye">Montant Non Paye</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="number" formControlName="montant_non_paye" class="form-control" required placeholder="Montant Non Paye">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="statut_etude_presentiel">Statut Etude Presentiel</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="text" formControlName="statut_etude_presentiel" class="form-control" required placeholder="Statut Etude Presentiel" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="detailEtudePresentiel">Detail Etude Presentiel</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="text" formControlName="detailEtudePresentiel" class="form-control" required placeholder="Detail Etude Presentiel">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="detailEnseigant">Detail Enseigant</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="text" formControlName="detailEnseigant" class="form-control" required placeholder="Detail Enseigant">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="phoneNumber">Phone Number</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="number" formControlName="phoneNumber" class="form-control" required placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="role">Role</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-envelope'></i>
+                                        <input type="text" formControlName="role" class="form-control" required placeholder="Role" readonly>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-sm-6">
+                                    <label for="password">Password</label>
+                                    <div class="form-group">
+                                        <i class='bx bx-lock'></i>
+                                        <input type="password" formControlName="password" class="form-control" required placeholder="Password">
+                                    </div>
+                                </div>
+                                <!-- Add more fields as necessary -->
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn border-radius">Update Teacher <i class='bx bx-plus'></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

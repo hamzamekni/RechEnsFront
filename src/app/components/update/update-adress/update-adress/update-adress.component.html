@@ -24,21 +24,24 @@
                         <form [formGroup]="updateAddressForm" (ngSubmit)="onSubmit()">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="addressId">Address ID</label>
                                     <div class="form-group">
                                         <i class='bx bx-user'></i>
-                                        <input type="text" formControlName="adress_Id" class="form-control" placeholder="Address ID" disabled>
+                                        <input type="text" formControlName="adress_Id" id="addressId" class="form-control" placeholder="Address ID" disabled>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="roadAddress">Road Address</label>
                                     <div class="form-group">
                                         <i class='bx bx-user'></i>
-                                        <input type="text" formControlName="road_adress" class="form-control" required placeholder="Road Address">
+                                        <input type="text" formControlName="road_adress" id="roadAddress" class="form-control" required placeholder="Road Address">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="regionId">Region ID</label>
                                     <div class="form-group">
                                         <i class='bx bx-map'></i>
-                                        <select formControlName="region.region_Id" class="form-control" required>
+                                        <select formControlName="region.region_Id" id="regionId" class="form-control" required>
                                             <option *ngFor="let regionId of regionIds" [value]="regionId">{{ regionId }}</option>
                                         </select>
                                     </div>

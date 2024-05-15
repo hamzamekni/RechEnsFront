@@ -35,11 +35,20 @@ import { MatiereComponent } from './components/pages/matiere/matiere.component';
 import { EtudiantComponent } from './components/pages/etudiant/etudiant.component';
 import { UpdateAdressComponent } from './components/update/update-adress/update-adress/update-adress.component';
 import { UpdateDemandeDeCourComponent } from './components/update/update-demandeDeCour/update-demande-de-cour/update-demande-de-cour.component';
+import { UpdateTeacherComponent } from './components/update/update-teacher/update-teacher.component';
+import { UpdateMatiereComponent } from './components/update/update-matiere/update-matiere.component';
+import { ProfileComponent } from './components/pages/profile/profile.component';
 
 const routes: Routes = [
     {path: 'sign-in', component: SignInComponent},
+
     {path: 'app-update-adress/:id', component: UpdateAdressComponent},
     {path: 'app-update-demande-de-cour/:id', component: UpdateDemandeDeCourComponent},
+    {path: 'app-update-teacher/:id', component: UpdateTeacherComponent},
+    {path: 'app-update-matiere/:id', component: UpdateMatiereComponent},
+
+    {path: 'app-profile', component: ProfileComponent},
+
 
     {path: 'app-seo-agency', component: SeoAgencyComponent, canActivate: [AuthGuard]},
     {path: '', component: AiStartupComponent},

@@ -1,11 +1,11 @@
 <div class="inner-banner">
     <div class="container">
         <div class="inner-title text-center">
-            <h3>Update Address</h3>
+            <h3>Update Demand De Cour</h3>
             <ul>
                 <li><a routerLink="/home">Home</a></li>
                 <li><i class='bx bx-chevron-right'></i></li>
-                <li>Update Address</li>
+                <li>Update Demand De Cour</li>
             </ul>
         </div>
     </div>
@@ -18,42 +18,49 @@
                 <div class="contact-wrap">
                     <div class="contact-form">
                         <div class="section-title">
-                            <span class="sp-before sp-after">Update Address</span>
-                            <h2>Complete This Form To Update the Address</h2>
+                            <span class="sp-before sp-after">Update Demand De Cour</span>
+                            <h2>Complete This Form To Update the Demand De Cour</h2>
                         </div>
                         <form [formGroup]="updateDemandeDeCourForm" (ngSubmit)="onSubmit()">
                             <div class="row">
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="titre_demande">Titre Demande</label>
                                     <div class="form-group">
                                         <input type="text" formControlName="titre_demande" class="form-control" required placeholder="Titre Demande">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="detail_demande">Detail Demande</label>
                                     <div class="form-group">
                                         <input type="text" formControlName="detail_demande" class="form-control" required placeholder="Detail Demande">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="locale">Locale</label>
                                     <div class="form-group">
                                         <input type="text" formControlName="locale" class="form-control" required placeholder="Locale">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="prix_max">Prix Max</label>
                                     <div class="form-group">
                                         <input type="number" formControlName="prix_max" class="form-control" required placeholder="Prix Max">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="prix_min">Prix Min</label>
                                     <div class="form-group">
                                         <input type="number" formControlName="prix_min" class="form-control" required placeholder="Prix Min">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="statutDemande">Statut Demande</label>
                                     <div class="form-group">
                                         <input type="text" formControlName="statutDemande" class="form-control" required placeholder="Statut Demande">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="teacher.teacher_Id">Teacher</label>
                                     <div class="form-group">
                                         <i class='bx bx-user'></i>
                                         <select formControlName="teacher.teacher_Id" placeholder="Titre Demande" class="form-control" required>
@@ -63,6 +70,7 @@
                                 </div>
                                 
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="matiere.matiere_Id">Matiere</label>
                                     <div class="form-group">
                                         <i class='bx bx-book'></i>
                                         <select formControlName="matiere.matiere_Id" class="form-control" required>
@@ -72,6 +80,7 @@
                                 </div>
                                 
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="etudiant.etudiant_Id">Etudiant</label>
                                     <div class="form-group">
                                         <i class='bx bx-user'></i>
                                         <select formControlName="etudiant.etudiant_Id" class="form-control" required>
@@ -80,6 +89,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6">
+                                    <label for="adress.adress_Id">Address</label>
                                     <div class="form-group">
                                         <i class='bx bx-map'></i>
                                         <select formControlName="adress.adress_Id" class="form-control" required>

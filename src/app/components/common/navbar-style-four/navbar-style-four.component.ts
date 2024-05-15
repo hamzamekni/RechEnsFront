@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { TeacherService } from 'src/app/teacher.service';
 
 @Component({
   selector: 'app-navbar-style-four',
@@ -13,7 +15,7 @@ export class NavbarStyleFourComponent implements OnInit {
   admin: boolean = false; 
  
 
-  constructor(private cookieService: CookieService) { }
+  constructor(private router: Router,private cookieService: CookieService) { }
 
   ngOnInit(): void {
     // Check if there's a token in the cookies to determine if the user is logged in
@@ -29,6 +31,9 @@ export class NavbarStyleFourComponent implements OnInit {
     this.isLoggedIn = !!token; // Convert token to boolean
   }
 
+  
+
+  
   toggleMenu(): void {
     // Method to toggle the visibility of the menu
     // Implement your logic here
@@ -42,6 +47,9 @@ export class NavbarStyleFourComponent implements OnInit {
     this.isLoggedIn = false;
     // Implement any other logout logic here
   }
+
+  
+
   decodeToken(token: string): any {
     try {
       const tokenPayload = token.split('.')[1];

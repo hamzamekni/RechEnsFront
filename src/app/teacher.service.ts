@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Teacher } from './model/Teacher';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,15 @@ export class TeacherService {
   }
   getTeacherList():Observable<any>{
     return this.http.get(`${this.baseUrl}`);
+  }
+
+  searchTeachersByFirstName(firstName: string): Observable<Teacher[]> {
+    // Implement the logic to search for teachers by first name
+    // For example, you can make an HTTP request to your backend API
+    // and return an Observable of Teacher[]
+
+    // This is just a placeholder example
+    return this.http.get<Teacher[]>(`${this.baseUrl}?firstName=${firstName}`);
   }
 
 }
