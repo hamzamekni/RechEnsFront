@@ -3,11 +3,11 @@
 <div class="inner-banner">
     <div class="container">
         <div class="inner-title text-center">
-            <h3>Case Study</h3>
+            <h3>Demandes De Cours</h3>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><i class='bx bx-chevron-right'></i></li>
-                <li>Case Study</li>
+                <li>Demandes De Cours</li>
             </ul>
         </div>
     </div>
@@ -56,7 +56,7 @@
                     <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td> <!-- Assuming you want to display the whole etudiant object -->
                     <td>{{ demandeDeCour.teacher.teacherId }}</td> <!-- Assuming you want to display the whole teacher object -->
                     <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
+                    <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-demande-de-cour', demandeDeCour.demandeDeCour_Id]">Update</button>
                         <button type="button" class="btn btn-outline-danger" (click)="deleteDemandeDeCour(demandeDeCour.demandeDeCour_Id)">Delete</button>
                     </tr>
                 </tbody>
@@ -80,34 +80,3 @@
     </div>
 </div>
 
-<div class="brand-logo-area pt-100">
-    <div class="container-fluid">
-        <div class="container-max">
-            <div class="brand-logo-slider owl-carousel owl-theme">
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo1.png" alt="Images">
-                </div>
-                
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo2.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo3.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo4.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo5.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo6.png" alt="Images">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

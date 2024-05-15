@@ -9,6 +9,7 @@ import { AdressService } from 'src/app/adress.service';
 })
 export class AdressComponent implements OnInit {
   addresses: Adress[] = [];
+  selectedAddress: Adress;
 
   constructor(private adressService: AdressService) { }
 
@@ -19,6 +20,17 @@ export class AdressComponent implements OnInit {
   getAddresses(): void {
     this.adressService.getAdressList()
       .subscribe(addresses => this.addresses = addresses);
+  }
+
+  selectAddress(addressId: number): void {
+    this.adressService.getAdress(addressId).subscribe(
+      (address: Adress) => {
+        this.selectedAddress = address;
+      },
+      (error) => {
+        console.error('Error fetching address:', error);
+      }
+    );
   }
 
   deleteAddress(addressId: number): void {

@@ -30,6 +30,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Matiere ID</th>
                     <th scope="col">Code Etude</th>
+                    <th scope="col">Matiere Name</th>
                     <th scope="col">Niveau Etude</th>
                     <th scope="col">Teacher ID</th>
                     <!-- Add more headers as needed -->
@@ -40,6 +41,7 @@
                   <tr *ngFor="let matiere of matieres; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ matiere.matiere_Id }}</td>
+                    <td>{{ matiere.matiere_name }}</td>
                     <td>{{ matiere.code_etude }}</td>
                     <td>{{ matiere.niveauEtude.text_niveau }}</td> <!-- Assuming text_niveau is the property you want to display -->
                     <td>{{ matiere.teacher.teacherId }}</td> <!-- Assuming teacherId is the property you want to display -->
@@ -70,34 +72,3 @@
     </div>
 </div>
 
-<div class="brand-logo-area pt-100">
-    <div class="container-fluid">
-        <div class="container-max">
-            <div class="brand-logo-slider owl-carousel owl-theme">
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo1.png" alt="Images">
-                </div>
-                
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo2.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo3.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo4.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo5.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo6.png" alt="Images">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

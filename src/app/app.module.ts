@@ -32,7 +32,7 @@ import { BlogDetailsComponent } from './components/pages/blog-details/blog-detai
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDropzoneComponent, NgxDropzoneModule } from 'ngx-dropzone';
 import { AdressComponent } from './components/pages/adress/adress.component';
 import { EtudiantComponent } from './components/pages/etudiant/etudiant.component';
@@ -46,6 +46,8 @@ import { TeacherComponent } from './components/pages/teacher/teacher.component';
 import { UserComponent } from './components/pages/user/user.component';
 import { VilleComponent } from './components/pages/ville/ville.component';
 import { CookieService } from 'ngx-cookie-service';
+import { UpdateAdressComponent } from './components/update/update-adress/update-adress/update-adress.component';
+import { UpdateDemandeDeCourComponent } from './components/update/update-demandeDeCour/update-demande-de-cour/update-demande-de-cour.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +90,8 @@ import { CookieService } from 'ngx-cookie-service';
     ServicesDetailsComponent,
     BlogDetailsComponent,
     BlogComponent,
+    UpdateAdressComponent,
+    UpdateDemandeDeCourComponent,
     ContactComponent
   ],
   imports: [
@@ -95,6 +99,7 @@ import { CookieService } from 'ngx-cookie-service';
     HttpClientModule,
     FormsModule, 
     AppRoutingModule,
+    ReactiveFormsModule,
     NgxDropzoneModule
   ],
   providers: [],

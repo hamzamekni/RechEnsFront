@@ -33,9 +33,14 @@ import { PaiementComponent } from './components/pages/paiement/paiement.componen
 import { NiveauEtudeComponent } from './components/pages/niveau-etude/niveau-etude.component';
 import { MatiereComponent } from './components/pages/matiere/matiere.component';
 import { EtudiantComponent } from './components/pages/etudiant/etudiant.component';
+import { UpdateAdressComponent } from './components/update/update-adress/update-adress/update-adress.component';
+import { UpdateDemandeDeCourComponent } from './components/update/update-demandeDeCour/update-demande-de-cour/update-demande-de-cour.component';
 
 const routes: Routes = [
     {path: 'sign-in', component: SignInComponent},
+    {path: 'app-update-adress/:id', component: UpdateAdressComponent},
+    {path: 'app-update-demande-de-cour/:id', component: UpdateDemandeDeCourComponent},
+
     {path: 'app-seo-agency', component: SeoAgencyComponent, canActivate: [AuthGuard]},
     {path: '', component: AiStartupComponent},
     {path: 'machine-learning', component: MachineLearningComponent, canActivate: [AuthGuard]},

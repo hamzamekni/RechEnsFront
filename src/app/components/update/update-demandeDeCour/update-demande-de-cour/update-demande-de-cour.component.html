@@ -1,0 +1,101 @@
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Update Address</h3>
+            <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>Update Address</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="contact-section pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-wrap">
+                    <div class="contact-form">
+                        <div class="section-title">
+                            <span class="sp-before sp-after">Update Address</span>
+                            <h2>Complete This Form To Update the Address</h2>
+                        </div>
+                        <form [formGroup]="updateDemandeDeCourForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="titre_demande" class="form-control" required placeholder="Titre Demande">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="detail_demande" class="form-control" required placeholder="Detail Demande">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="locale" class="form-control" required placeholder="Locale">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="number" formControlName="prix_max" class="form-control" required placeholder="Prix Max">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="number" formControlName="prix_min" class="form-control" required placeholder="Prix Min">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" formControlName="statutDemande" class="form-control" required placeholder="Statut Demande">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <select formControlName="teacher.teacher_Id" placeholder="Titre Demande" class="form-control" required>
+                                            <option *ngFor="let teacherId of teacherIds" [value]="teacherId">{{ teacherId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-book'></i>
+                                        <select formControlName="matiere.matiere_Id" class="form-control" required>
+                                            <option *ngFor="let matiereId of matiereIds" [value]="matiereId">{{ matiereId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <select formControlName="etudiant.etudiant_Id" class="form-control" required>
+                                            <option *ngFor="let etudiantId of etudiantIds" [value]="etudiantId">{{ etudiantId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-map'></i>
+                                        <select formControlName="adress.adress_Id" class="form-control" required>
+                                            <option *ngFor="let adressId of adressIds" [value]="adressId">{{ adressId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn border-radius">Update Demand De Cour <i class='bx bx-plus'></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

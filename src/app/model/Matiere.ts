@@ -4,8 +4,10 @@ import { Teacher } from './Teacher'; // Import the Teacher model if it exists
 export class Matiere {
   matiere_Id: number;
   code_etude: number;
+  matiere_name : string;
   niveauEtude: NiveauEtude; // Assuming NiveauEtude is another model/class
   teacher: Teacher; // Assuming Teacher is another model/class
+ 
 
   constructor(data: any = {}) {
     this.matiere_Id = data.matiere_Id || null;

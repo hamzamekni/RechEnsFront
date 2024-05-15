@@ -1,0 +1,57 @@
+<div class="inner-banner">
+    <div class="container">
+        <div class="inner-title text-center">
+            <h3>Update Address</h3>
+            <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li><i class='bx bx-chevron-right'></i></li>
+                <li>Update Address</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="contact-section pt-100 pb-70">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="contact-wrap">
+                    <div class="contact-form">
+                        <div class="section-title">
+                            <span class="sp-before sp-after">Update Address</span>
+                            <h2>Complete This Form To Update the Address</h2>
+                        </div>
+                        <form [formGroup]="updateAddressForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <input type="text" formControlName="adress_Id" class="form-control" placeholder="Address ID" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-user'></i>
+                                        <input type="text" formControlName="road_adress" class="form-control" required placeholder="Road Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <i class='bx bx-map'></i>
+                                        <select formControlName="region.region_Id" class="form-control" required>
+                                            <option *ngFor="let regionId of regionIds" [value]="regionId">{{ regionId }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Add more fields as necessary -->
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn border-radius">Update Address <i class='bx bx-plus'></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

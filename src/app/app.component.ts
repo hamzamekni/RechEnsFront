@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import { DemandeDeCour } from './model/DemandeDeCour';
 declare let $: any;
 
 @Component({
@@ -16,6 +17,8 @@ declare let $: any;
     ]
 })
 export class AppComponent implements OnInit {
+    demandes: DemandeDeCour[] = [];
+
     location: any;
     routerSubscription: any;
 
@@ -23,6 +26,25 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(){
+        this.demandes = [
+            // Sample data
+            new DemandeDeCour({
+              demandeDeCour_Id: 1,
+              titre_demande: 'Math Tutoring',
+              detail_demande: 'Need help with algebra',
+              locale: 'Online',
+              prix_max: 50,
+              prix_min: 30,
+              statutDemande: 'Pending',
+              adress: { /* Address data */ },
+              matiere: { name: 'Math' },
+              etudiant: { /* Etudiant data */ },
+              teacher: { /* Teacher data */ },
+              date: '2024-05-01' // Add a date property if not existing
+            }),
+            // Add more sample demands
+          ];
+
         this.recallJsFuntions();
     }
 

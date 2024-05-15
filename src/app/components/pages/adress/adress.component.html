@@ -42,16 +42,12 @@
                     <td>{{ address.road_adress }}</td>
                     <td>{{ address.region.region_Id }}</td> <!-- Assuming you want to display the whole region object -->
                     <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteAddress(address.adress_Id)">Delete</button>
+                    <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-adress', address.adress_Id]">Update</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="deleteAddress(address.adress_Id)">Delete</button>
                     </tr>
                 </tbody>
               </table>
               
-              
-              
-
-            
 
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area text-center">
@@ -67,34 +63,3 @@
     </div>
 </div>
 
-<div class="brand-logo-area pt-100">
-    <div class="container-fluid">
-        <div class="container-max">
-            <div class="brand-logo-slider owl-carousel owl-theme">
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo1.png" alt="Images">
-                </div>
-                
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo2.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo3.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo4.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo5.png" alt="Images">
-                </div>
-
-                <div class="brand-logo-item">
-                    <img src="assets/img/brand/brand-logo6.png" alt="Images">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
