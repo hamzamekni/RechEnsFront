@@ -20,7 +20,27 @@ export class SignUpComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   signUp(): void {
-    this.authService.signUp(this.userData)
+    var x =this.userData.phoneNumber
+    if(this.userData.firstName===''){
+      alert("Please enter your first name");
+    }else if(this.userData.lastName==='')
+      {
+        alert("Please enter your last name");
+      }
+    else if(x.length<8){
+        alert("Please enter a valid phone number");
+      }
+    else if(this.userData.birthday===''){
+        alert("Please enter your birthday");
+      }
+    else if(this.userData.email===''){
+        alert("Please enter your email");
+      }
+    else if(this.userData.password===''){
+        alert("Please enter your password");
+      }
+    else{
+      this.authService.signUp(this.userData)
       .subscribe(
         response => {
           // Handle successful sign up response
@@ -30,11 +50,16 @@ export class SignUpComponent implements OnInit {
           // Handle sign up error
           console.error('Sign up failed:', error);
           // Optionally, display an error message to the user
+          alert("Credentials Must Be Valid")
         }
       );
+    }
+    
   }
 
   ngOnInit(): void {
   }
+
+
 
 }

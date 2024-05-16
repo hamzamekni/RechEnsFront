@@ -30,6 +30,25 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     // Check if authentication token exists in cookies
-    return this.cookieService.check('token');
+    return !!this.cookieService.get('token');
+  }
+
+  getUserRole(): string | null {
+    const token = this.cookieService.get('token');
+    if (token) {
+      const decodedToken = this.decodeToken(token);
+      return decodedToken?.role || null;
+    }
+    return null;
+  }
+
+  private decodeToken(token: string): any {
+    try {
+      const tokenPayload = token.split('.')[1];
+      return JSON.parse(atob(tokenPayload));
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
+    }
   }
 }

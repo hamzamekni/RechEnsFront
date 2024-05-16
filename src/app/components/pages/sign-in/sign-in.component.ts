@@ -15,6 +15,13 @@ export class SignInComponent implements OnInit {
   constructor(private authService: AuthService, private cookieService: CookieService) { }
 
   login(): void {
+    if(this.email===''){
+      alert("Please enter your email");
+    }
+  else if(this.password===''){
+      alert("Please enter your password");
+    }
+  else{
     this.authService.login(this.email, this.password)
       .subscribe(
         response => {
@@ -38,8 +45,10 @@ export class SignInComponent implements OnInit {
         },
         error => {
           // Handle error response
+          alert("Email Or Password Incorrect")
         }
       );
+    }
   }
 
   decodeToken(token: string): any {

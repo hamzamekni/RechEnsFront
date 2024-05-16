@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { AuthService } from './auth-service.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,17 @@ import { AuthService } from './auth-service.service';
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(): boolean {
-    if (this.authService.isLoggedIn()) {
-      return true; // User is logged in, allow access to the route
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    const isLoggedIn = this.authService.isLoggedIn();
+    const userRole = this.authService.getUserRole();
+
+    if (isLoggedIn && (userRole === 'ROLE_ADMIN')) {
+      return true;
     } else {
-      this.router.navigate(['/']); // Redirect to the login page if the user is not logged in
+      // Redirect the user to a different page if they are not authorized
+      this.router.navigate(['/access-denied']);
       return false;
     }
   }

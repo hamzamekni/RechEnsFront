@@ -38,29 +38,32 @@
                 <div class="user-all-form">
                     <div class="contact-form">
                         <form id="contactForm"  (ngSubmit)="signUp()">
+                            <label for="roadAddress">First Name</label>
                             <div class="form-group" >
                                 <i class='bx bx-user'></i>
                                 <input type="text" name="firstName"  [(ngModel)]="userData.firstName" id="firstName" class="form-control" required data-error="Please enter your first Name" placeholder="firstName">
                             </div>
+                            <label for="roadAddress">Last Name</label>
                             <div class="form-group">
                                 <i class='bx bx-user'></i>
                                 <input type="text" name="lastName" [(ngModel)]="userData.lastName" id="lastName" class="form-control" required data-error="Please enter your lastName" placeholder="lastName" required>
                             </div>
+                            <label for="roadAddress">Phone Number</label>
                             <div class="form-group">
                                 <i class='bx bx-user'></i>
                                 <input type="number" name="phoneNumber" [(ngModel)]="userData.phoneNumber" id="phoneNumber" class="form-control" required data-error="Please enter your phoneNumber" placeholder="PhoneNumber" required>
                             </div>
+                            <label for="roadAddress">Birthday</label>
                             <div class="form-group">
                                 <i class='bx bx-mail-send'></i>
                                 <input type="date" name="birthday" [(ngModel)]="userData.birthday" id="birthday" class="form-control" required data-error="Please enter birthday" placeholder="birthday" required>
                             </div>
-
+                            <label for="roadAddress">Email</label>
                             <div class="form-group">
                                 <i class='bx bx-mail-send'></i>
                                 <input type="email" name="email" [(ngModel)]="userData.email" id="email" class="form-control" required data-error="Please enter email" placeholder="Email" required>
                             </div>
-                            
-
+                            <label for="roadAddress">Password</label>
                             <div class="form-group">
                                 <i class='bx bx-lock-alt'></i>
                                 <input class="form-control" type="password" name="password" [(ngModel)]="userData.password" placeholder="Password" required>
