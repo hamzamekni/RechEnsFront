@@ -9,6 +9,7 @@ import { RecommendationService } from 'src/app/recommendation.service';
 })
 export class RecommendationComponent implements OnInit {
   recommendations: Recommendation[] = [];
+  filteredRecommendations: Recommendation[] = [];
 
   constructor(private recommendationService: RecommendationService) { }
 
@@ -18,7 +19,10 @@ export class RecommendationComponent implements OnInit {
 
   getRecommendations(): void {
     this.recommendationService.getRecommendationList()
-      .subscribe(recommendations => this.recommendations = recommendations);
+      .subscribe((recommendations: Recommendation[]) => {
+        this.recommendations = recommendations;
+        this.filteredRecommendations = recommendations; // Initialize filtered recommendations
+      });
   }
 
   deleteRecommendation(recommendationId: number): void {
@@ -26,6 +30,17 @@ export class RecommendationComponent implements OnInit {
       .subscribe(() => {
         // Remove the deleted recommendation from the recommendations array
         this.recommendations = this.recommendations.filter(recommendation => recommendation.recommendationId !== recommendationId);
+        this.filteredRecommendations = this.filteredRecommendations.filter(recommendation => recommendation.recommendationId !== recommendationId);
       });
+  }
+
+  searchRecommendations(): void {
+    const input = (document.getElementById('myInput') as HTMLInputElement).value.toUpperCase();
+    this.filteredRecommendations = this.recommendations.filter(recommendation => 
+      recommendation.recommendationId.toString().toUpperCase().includes(input) ||
+      recommendation.recommandation.toUpperCase().includes(input) ||
+      recommendation.etudiant.etudiant_Id.toString().toUpperCase().includes(input) ||
+      recommendation.teacher.teacherId.toString().toUpperCase().includes(input)
+    );
   }
 }

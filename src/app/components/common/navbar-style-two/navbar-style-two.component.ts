@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -13,7 +14,7 @@ export class NavbarStyleTwoComponent implements OnInit {
   admin: boolean = false; 
  
 
-  constructor(private cookieService: CookieService) { }
+  constructor(private cookieService: CookieService,private router: Router) { }
 
   ngOnInit(): void {
     // Check if there's a token in the cookies to determine if the user is logged in
@@ -40,6 +41,7 @@ export class NavbarStyleTwoComponent implements OnInit {
     this.cookieService.delete('token');
     // Update isLoggedIn property
     this.isLoggedIn = false;
+    this.router.navigate(['/sign-in'])
     // Implement any other logout logic here
   }
   decodeToken(token: string): any {

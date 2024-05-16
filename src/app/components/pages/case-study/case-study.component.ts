@@ -9,28 +9,41 @@ import { DemandeDeCour } from 'src/app/model/DemandeDeCour';
 })
 export class CaseStudyComponent implements OnInit {
   demandesDeCours: DemandeDeCour[] = [];
+  filteredDemandesDeCours: DemandeDeCour[] = [];
 
   constructor(private demandesDeCourService: DemandeDeCourService) { }
 
   ngOnInit(): void {
-    // Call a method to fetch demandes de cours when the component initializes
     this.fetchDemandesDeCours();
   }
 
   fetchDemandesDeCours(): void {
-    // Call the backend service to fetch demandes de cours
     this.demandesDeCourService.getDemandeDeCoursList()
       .subscribe((demandesDeCours: DemandeDeCour[]) => {
         this.demandesDeCours = demandesDeCours;
+        this.filteredDemandesDeCours = demandesDeCours;
       });
   }
 
   deleteDemandeDeCour(demandeDeCourId: number): void {
-    // Call the backend service to delete the demande de cour
     this.demandesDeCourService.deleteDemandeDeCours(demandeDeCourId)
       .subscribe(() => {
-        // Remove the deleted demande de cour from the demandesDeCours array
         this.demandesDeCours = this.demandesDeCours.filter(demandeDeCour => demandeDeCour.demandeDeCour_Id !== demandeDeCourId);
+        this.filteredDemandesDeCours = this.filteredDemandesDeCours.filter(demandeDeCour => demandeDeCour.demandeDeCour_Id !== demandeDeCourId);
       });
+  }
+
+  searchDemandesDeCours(): void {
+    const input = (document.getElementById('myInput') as HTMLInputElement).value.toUpperCase();
+    this.filteredDemandesDeCours = this.demandesDeCours.filter(demandeDeCour => 
+      demandeDeCour.titre_demande.toUpperCase().includes(input) ||
+      demandeDeCour.detail_demande.toUpperCase().includes(input) ||
+      demandeDeCour.locale.toUpperCase().includes(input) ||
+      demandeDeCour.statutDemande.toUpperCase().includes(input) ||
+      demandeDeCour.adress.adress_Id.toString().includes(input) ||
+      demandeDeCour.matiere.matiere_Id.toString().includes(input) ||
+      demandeDeCour.etudiant.etudiant_Id.toString().includes(input) ||
+      demandeDeCour.teacher.teacherId.toString().includes(input)
+    );
   }
 }

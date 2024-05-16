@@ -24,33 +24,32 @@
     <div class="container">
         <div class="row">
 
-            <table class="table table-striped">
+        
+                <input type="text" id="myInput" (keyup)="searchNiveauxEtude()" placeholder="Search for niveaux..." title="Type in a niveau">
+         
+            <table class="table table-striped" id="myTable">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Niveau Etude ID</th>
-                    <th scope="col">Text Niveau</th>
-                    <!-- Add more headers as needed -->
-                    <th></th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Niveau Etude ID</th>
+                        <th scope="col">Text Niveau</th>
+                        <!-- Add more headers as needed -->
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let niveauEtude of niveauxEtude; let i = index">
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ niveauEtude.niveauEtude_Id }}</td>
-                    <td>{{ niveauEtude.text_niveau }}</td>
-                    <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteNiveauEtude(niveauEtude.niveauEtude_Id)">Delete</button>
+                    <tr *ngFor="let niveauEtude of filteredNiveauxEtude; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ niveauEtude.niveauEtude_Id }}</td>
+                        <td>{{ niveauEtude.text_niveau }}</td>
+                        <!-- Add more cells to display other properties as needed -->
+                        <td>
+                            <button type="button" class="btn btn-outline-success">Update</button>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteNiveauEtude(niveauEtude.niveauEtude_Id)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
-              </table>
-              
-              
-              
-              
-              
-
+            </table>
             
 
             <div class="col-lg-12 col-md-12">

@@ -45,6 +45,8 @@ export class NavbarStyleFourComponent implements OnInit {
     await this.cookieService.delete('token');
     // Update isLoggedIn property
     this.isLoggedIn = false;
+    this.router.navigate(['/sign-in'])
+    alert("logged out")
     // Implement any other logout logic here
   }
 
@@ -60,4 +62,6 @@ export class NavbarStyleFourComponent implements OnInit {
       return null;
     }
   }
+
+  
 }

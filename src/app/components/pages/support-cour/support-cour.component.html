@@ -24,7 +24,10 @@
     <div class="container">
         <div class="row">
 
-            <table class="table table-striped">
+            <div>
+                <input type="text" id="myInput" (keyup)="searchSupportCours()" placeholder="Search for support cours..." title="Type in a keyword">
+              </div>
+              <table class="table table-striped" id="myTable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -36,15 +39,17 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let supportCour of supportCours; let i = index">
+                  <tr *ngFor="let supportCour of filteredSupportCours; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ supportCour.supportCour_Id }}</td>
                     <td>{{ supportCour.signe_cours }}</td>
                     <td>{{ supportCour.type_cours }}</td>
                     <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteSupportCour(supportCour.supportCour_Id)">Delete</button>
-                    </tr>
+                    <td>
+                      <button type="button" class="btn btn-outline-success">Update</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="deleteSupportCour(supportCour.supportCour_Id)">Delete</button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               

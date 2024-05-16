@@ -24,7 +24,10 @@
     <div class="container">
         <div class="row">
 
-            <table class="table table-striped">
+            <div>
+                <input type="text" id="myInput" (keyup)="searchRecommendations()" placeholder="Search for recommendations..." title="Type in a keyword">
+              </div>
+              <table class="table table-striped" id="myTable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -37,16 +40,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let recommendation of recommendations; let i = index">
+                  <tr *ngFor="let recommendation of filteredRecommendations; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
                     <td>{{ recommendation.recommendationId }}</td>
                     <td>{{ recommendation.recommandation }}</td>
                     <td>{{ recommendation.etudiant.etudiant_Id }}</td>
                     <td>{{ recommendation.teacher.teacherId }}</td>
                     <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteRecommendation(recommendation.recommendationId)">Delete</button>
-                    </tr>
+                    <td>
+                      <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-recommendation', recommendation.recommendationId]">Update</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="deleteRecommendation(recommendation.recommendationId)">Delete</button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
               

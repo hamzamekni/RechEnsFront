@@ -9,6 +9,7 @@ import { Matiere } from 'src/app/model/Matiere';
 })
 export class MatiereComponent implements OnInit {
   matieres: Matiere[] = [];
+  filteredMatieres: Matiere[] = [];
 
   constructor(private matiereService: MatiereService) { }
 
@@ -18,14 +19,28 @@ export class MatiereComponent implements OnInit {
 
   getMatieres(): void {
     this.matiereService.getMatiereList()
-      .subscribe(matieres => this.matieres = matieres);
+      .subscribe((matieres: Matiere[]) => {
+        this.matieres = matieres;
+        this.filteredMatieres = matieres; // Initialize filtered matieres
+      });
   }
 
   deleteMatiere(matiereId: number): void {
     this.matiereService.deleteMatiere(matiereId)
       .subscribe(() => {
-        // Remove the deleted matiere from the matieres array
         this.matieres = this.matieres.filter(matiere => matiere.matiere_Id !== matiereId);
+        this.filteredMatieres = this.filteredMatieres.filter(matiere => matiere.matiere_Id !== matiereId);
       });
+  }
+
+  searchMatieres(): void {
+    const input = (document.getElementById('myInput') as HTMLInputElement).value.toUpperCase();
+    this.filteredMatieres = this.matieres.filter(matiere => 
+      matiere.matiere_Id.toString().toUpperCase().includes(input) ||
+      matiere.code_etude.toString().includes(input) ||
+      matiere.matiere_name.toUpperCase().includes(input) ||
+      matiere.niveauEtude.text_niveau.toUpperCase().includes(input) ||
+      matiere.teacher.teacherId.toString().toUpperCase().includes(input)
+    );
   }
 }

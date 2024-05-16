@@ -10,11 +10,16 @@ import { AdressService } from 'src/app/adress.service';
 export class AdressComponent implements OnInit {
   addresses: Adress[] = [];
   selectedAddress: Adress;
+  filteredAddresses: any[] = [];
 
   constructor(private adressService: AdressService) { }
 
   ngOnInit(): void {
     this.getAddresses();
+    this.adressService.getAdressList().subscribe((data: any[]) => {
+      this.addresses = data;
+      this.filteredAddresses = data;
+    });
   }
 
   getAddresses(): void {
@@ -39,5 +44,13 @@ export class AdressComponent implements OnInit {
         // Remove the deleted address from the addresses array
         this.addresses = this.addresses.filter(address => address.adress_Id !== addressId);
       });
+  }
+
+  myFunction(): void {
+    const input = document.getElementById('myInput') as HTMLInputElement;
+    const filter = input.value.toUpperCase();
+    this.filteredAddresses = this.addresses.filter(address => 
+      address.road_adress.toUpperCase().includes(filter)
+    );
   }
 }

@@ -32,6 +32,7 @@
                             </ng-container>
                             <ng-container *ngIf="teacher==true && isLoggedIn==true">
                                 <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                                <li class="nav-item"><a routerLink="/app-matiere" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Matiere's</a></li>
 
                                 <li class="nav-item"><a routerLink="/app-support-cour" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Suppor Cour's</a></li>
                                 <li class="nav-item"><a routerLink="/case-study" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Demandes De Cours</a></li>
@@ -62,7 +63,7 @@
 
                         <div class="side-item">
                             <div class="user-btn" (click)="logout()">
-                                <a routerLink="/sign-in"><i class="flaticon-left"></i></a>
+                                <a ><i class="flaticon-left"></i></a>
                             </div>
                         </div>
                         <div class="side-item">

@@ -9,6 +9,7 @@ import { NiveauEtudeService } from 'src/app/niveau-etude.service';
 })
 export class NiveauEtudeComponent implements OnInit {
   niveauxEtude: NiveauEtude[] = [];
+  filteredNiveauxEtude: NiveauEtude[] = [];
 
   constructor(private niveauEtudeService: NiveauEtudeService) { }
 
@@ -18,14 +19,25 @@ export class NiveauEtudeComponent implements OnInit {
 
   getNiveauxEtude(): void {
     this.niveauEtudeService.getNiveauEtudesList()
-      .subscribe(niveauxEtude => this.niveauxEtude = niveauxEtude);
+      .subscribe((niveauxEtude: NiveauEtude[]) => {
+        this.niveauxEtude = niveauxEtude;
+        this.filteredNiveauxEtude = niveauxEtude; // Initialize filtered niveauxEtude
+      });
   }
 
   deleteNiveauEtude(niveauEtudeId: number): void {
     this.niveauEtudeService.deleteNiveauEtude(niveauEtudeId)
       .subscribe(() => {
-        // Remove the deleted study level from the niveauxEtude array
         this.niveauxEtude = this.niveauxEtude.filter(niveauEtude => niveauEtude.niveauEtude_Id !== niveauEtudeId);
+        this.filteredNiveauxEtude = this.filteredNiveauxEtude.filter(niveauEtude => niveauEtude.niveauEtude_Id !== niveauEtudeId);
       });
+  }
+
+  searchNiveauxEtude(): void {
+    const input = (document.getElementById('myInput') as HTMLInputElement).value.toUpperCase();
+    this.filteredNiveauxEtude = this.niveauxEtude.filter(niveauEtude => 
+      niveauEtude.niveauEtude_Id.toString().toUpperCase().includes(input) ||
+      niveauEtude.text_niveau.toUpperCase().includes(input)
+    );
   }
 }

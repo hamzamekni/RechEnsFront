@@ -24,25 +24,30 @@
     <div class="container">
         <div class="row">
 
-            <table class="table table-striped">
+                <input type="text" id="myInput" (keyup)="searchRegions()" placeholder="Search for region IDs..." title="Type in a region ID">
+           
+            <table class="table table-striped" id="myTable">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Region ID</th>
-                    <!-- Add more headers as needed -->
-                    <th></th>
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Region ID</th>
+                        <!-- Add more headers as needed -->
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let region of regions; let i = index">
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ region.region_Id }}</td>
-                    <!-- Add more cells to display other properties as needed -->
-                    <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteRegion(region.region_Id)">Delete</button>
+                    <tr *ngFor="let region of filteredRegions; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ region.region_Id }}</td>
+                        <!-- Add more cells to display other properties as needed -->
+                        <td>
+                            <button type="button" class="btn btn-outline-success">Update</button>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteRegion(region.region_Id)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
-              </table>
+            </table>
+            
               
               
               

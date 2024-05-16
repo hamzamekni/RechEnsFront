@@ -23,44 +23,45 @@
 <div class="case-study-area pt-50 pb-70">
     <div class="container">
         <div class="row">
-
-            <table class="table table-striped">
+                <input type="text" id="myInput" (keyup)="searchDemandesDeCours()" placeholder="Search for road addresses..." title="Type in a road address">
+            <table class="table table-striped" id="myTable">
                 <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titre Demande</th>
-                    <th scope="col">Detail Demande</th>
-                    <th scope="col">Locale</th>
-                    <th scope="col">Prix Max</th>
-                    <th scope="col">Prix Min</th>
-                    <th scope="col">Statut Demande</th>
-                    <th scope="col">Adresse</th>
-                    <th scope="col">Matiere</th>
-                    <th scope="col">Etudiant</th>
-                    <th scope="col">Teacher</th>
-                    <th></th>
-                    <!-- Add more headers as needed -->
-                  </tr>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titre Demande</th>
+                        <th scope="col">Detail Demande</th>
+                        <th scope="col">Locale</th>
+                        <th scope="col">Prix Max</th>
+                        <th scope="col">Prix Min</th>
+                        <th scope="col">Statut Demande</th>
+                        <th scope="col">Adresse</th>
+                        <th scope="col">Matiere</th>
+                        <th scope="col">Etudiant</th>
+                        <th scope="col">Teacher</th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let demandeDeCour of demandesDeCours; let i = index">
-                    <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ demandeDeCour.titre_demande }}</td>
-                    <td>{{ demandeDeCour.detail_demande }}</td>
-                    <td>{{ demandeDeCour.locale }}</td>
-                    <td>{{ demandeDeCour.prix_max }}</td>
-                    <td>{{ demandeDeCour.prix_min }}</td>
-                    <td>{{ demandeDeCour.statutDemande }}</td>
-                    <td>{{ demandeDeCour.adress.adress_Id }}</td> <!-- Assuming you want to display the whole address object -->
-                    <td>{{ demandeDeCour.matiere.matiere_Id }}</td> <!-- Assuming you want to display the whole matiere object -->
-                    <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td> <!-- Assuming you want to display the whole etudiant object -->
-                    <td>{{ demandeDeCour.teacher.teacherId }}</td> <!-- Assuming you want to display the whole teacher object -->
-                    <!-- Add more cells to display other properties as needed -->
-                    <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-demande-de-cour', demandeDeCour.demandeDeCour_Id]">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteDemandeDeCour(demandeDeCour.demandeDeCour_Id)">Delete</button>
+                    <tr *ngFor="let demandeDeCour of filteredDemandesDeCours; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ demandeDeCour.titre_demande }}</td>
+                        <td>{{ demandeDeCour.detail_demande }}</td>
+                        <td>{{ demandeDeCour.locale }}</td>
+                        <td>{{ demandeDeCour.prix_max }}</td>
+                        <td>{{ demandeDeCour.prix_min }}</td>
+                        <td>{{ demandeDeCour.statutDemande }}</td>
+                        <td>{{ demandeDeCour.adress.adress_Id }}</td>
+                        <td>{{ demandeDeCour.matiere.matiere_Id }}</td>
+                        <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td>
+                        <td>{{ demandeDeCour.teacher.teacherId }}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-demande-de-cour', demandeDeCour.demandeDeCour_Id]">Update</button>
+                            <button type="button" class="btn btn-outline-danger" (click)="deleteDemandeDeCour(demandeDeCour.demandeDeCour_Id)">Delete</button>
+                        </td>
                     </tr>
                 </tbody>
-              </table>
+            </table>
+            
               
               
 
