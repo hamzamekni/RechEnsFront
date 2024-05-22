@@ -39,13 +39,13 @@
                 <tbody>
                   <tr *ngFor="let etudiant of etudiants; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ etudiant.etudiant_Id }}</td>
+                    <td>{{ etudiant.etudiantId }}</td>
                     <td>{{ etudiant.montant }}</td>
                     <td>{{ etudiant.section }}</td>
                     <td>{{ etudiant.users.userId }}</td> <!-- Assuming you want to display the user's ID -->
                     <!-- Add more cells to display other properties as needed -->
                     <td><button type="button" class="btn btn-outline-success">Update</button>
-                        <button type="button" class="btn btn-outline-danger" (click)="deleteEtudiant(etudiant.etudiant_Id)">Delete</button>
+                        <button type="button" class="btn btn-outline-danger" (click)="deleteEtudiant(etudiant.etudiantId)">Delete</button>
                     </tr>
                 </tbody>
               </table>

@@ -43,7 +43,7 @@
                 <tbody>
                   <tr *ngFor="let matiere of filteredMatieres; let i = index">
                     <th scope="row">{{ i + 1 }}</th>
-                    <td>{{ matiere.matiere_Id }}</td>
+                    <td>{{ matiere.matiereId }}</td>
                     <td>{{ matiere.code_etude }}</td>
                     <td>{{ matiere.matiere_name }}</td>
                     <td>{{ matiere.niveauEtude.text_niveau }}</td>
@@ -51,7 +51,7 @@
                     <!-- Add more cells to display other properties as needed -->
                     <td>
                       <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-matiere', matiere.matiere_Id]">Update</button>
-                      <button type="button" class="btn btn-outline-danger" (click)="deleteMatiere(matiere.matiere_Id)">Delete</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="deleteMatiere(matiere.matiereId)">Delete</button>
                     </td>
                   </tr>
                 </tbody>

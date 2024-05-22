@@ -28,15 +28,15 @@ export class MatiereComponent implements OnInit {
   deleteMatiere(matiereId: number): void {
     this.matiereService.deleteMatiere(matiereId)
       .subscribe(() => {
-        this.matieres = this.matieres.filter(matiere => matiere.matiere_Id !== matiereId);
-        this.filteredMatieres = this.filteredMatieres.filter(matiere => matiere.matiere_Id !== matiereId);
+        this.matieres = this.matieres.filter(matiere => matiere.matiereId !== matiereId);
+        this.filteredMatieres = this.filteredMatieres.filter(matiere => matiere.matiereId !== matiereId);
       });
   }
 
   searchMatieres(): void {
     const input = (document.getElementById('myInput') as HTMLInputElement).value.toUpperCase();
     this.filteredMatieres = this.matieres.filter(matiere => 
-      matiere.matiere_Id.toString().toUpperCase().includes(input) ||
+      matiere.matiereId.toString().toUpperCase().includes(input) ||
       matiere.code_etude.toString().includes(input) ||
       matiere.matiere_name.toUpperCase().includes(input) ||
       matiere.niveauEtude.text_niveau.toUpperCase().includes(input) ||

@@ -72,7 +72,7 @@ export class UpdateAdressComponent {
   onSubmit(): void {
     if (this.updateAddressForm.valid) {
       const updatedAddress: Adress = this.updateAddressForm.getRawValue();
-      this.addressService.updateAdress(updatedAddress.adress_Id, updatedAddress).subscribe(response => {
+      this.addressService.updateAdress(updatedAddress.adressId, updatedAddress).subscribe(response => {
         // Handle successful update
         console.log('Address updated:', response);
         this.router.navigate(['/app-adress']);

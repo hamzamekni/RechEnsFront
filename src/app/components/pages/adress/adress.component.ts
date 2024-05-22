@@ -42,7 +42,7 @@ export class AdressComponent implements OnInit {
     this.adressService.deleteAdress(addressId)
       .subscribe(() => {
         // Remove the deleted address from the addresses array
-        this.addresses = this.addresses.filter(address => address.adress_Id !== addressId);
+        this.addresses = this.addresses.filter(address => address.adressId !== addressId);
       });
   }
 

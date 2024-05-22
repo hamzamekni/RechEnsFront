@@ -38,12 +38,12 @@
     <tbody>
         <tr *ngFor="let address of filteredAddresses; let i = index">
             <th scope="row">{{ i + 1 }}</th>
-            <td>{{ address.adress_Id }}</td>
+            <td>{{ address.adressId }}</td>
             <td>{{ address.road_adress }}</td>
             <td>{{ address.region.region_Id }}</td> <!-- Assuming you want to display the whole region object -->
             <!-- Add more cells to display other properties as needed -->
             <td>
-                <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-adress', address.adress_Id]">Update</button>
+                <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-adress', address.adressId]">Update</button>
                 <button type="button" class="btn btn-outline-danger" (click)="deleteAddress(address.adress_Id)">Delete</button>
             </td>
         </tr>

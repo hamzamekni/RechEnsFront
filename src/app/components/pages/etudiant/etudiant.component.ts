@@ -25,7 +25,7 @@ export class EtudiantComponent implements OnInit {
     this.etudiantService.deleteEtudiant(etudiantId)
       .subscribe(() => {
         // Remove the deleted student from the etudiants array
-        this.etudiants = this.etudiants.filter(etudiant => etudiant.etudiant_Id !== etudiantId);
+        this.etudiants = this.etudiants.filter(etudiant => etudiant.etudiantId !== etudiantId);
       });
   }
 }

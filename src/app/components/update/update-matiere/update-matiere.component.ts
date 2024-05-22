@@ -95,7 +95,7 @@ export class UpdateMatiereComponent implements OnInit {
   onSubmit(): void {
     if (this.updateMatiereForm.valid) {
       const updatedMatiere: Matiere = this.updateMatiereForm.getRawValue();
-      this.matiereService.updateMatiere(updatedMatiere.matiere_Id, updatedMatiere).subscribe(
+      this.matiereService.updateMatiere(updatedMatiere.matiereId, updatedMatiere).subscribe(
         response => {
           // Handle successful update
           console.log('Matiere updated:', response);

@@ -25,4 +25,7 @@ export class DemandeDeCourService {
   getDemandeDeCoursList(): Observable<any>{
     return this.http.get(`${this.baseUrl}`)
   }
+  demandeForm(demandeDeCourData: any): Observable<any> {
+    return this.http.post<any>(this.baseUrl + '/demandeForm', demandeDeCourData);
+  }
 }

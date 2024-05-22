@@ -51,6 +51,7 @@ import { UpdateDemandeDeCourComponent } from './components/update/update-demande
 import { UpdateTeacherComponent } from './components/update/update-teacher/update-teacher.component';
 import { UpdateMatiereComponent } from './components/update/update-matiere/update-matiere.component';
 import { ProfileComponent } from './components/pages/profile/profile.component';
+import { DemandeDeCourComponent } from './components/pages/demande-de-cour/demande-de-cour.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { ProfileComponent } from './components/pages/profile/profile.component';
     UpdateTeacherComponent,
     UpdateMatiereComponent,
     ProfileComponent,
+    DemandeDeCourComponent,
     ContactComponent
   ],
   imports: [

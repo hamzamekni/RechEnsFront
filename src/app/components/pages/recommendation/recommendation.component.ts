@@ -39,7 +39,7 @@ export class RecommendationComponent implements OnInit {
     this.filteredRecommendations = this.recommendations.filter(recommendation => 
       recommendation.recommendationId.toString().toUpperCase().includes(input) ||
       recommendation.recommandation.toUpperCase().includes(input) ||
-      recommendation.etudiant.etudiant_Id.toString().toUpperCase().includes(input) ||
+      recommendation.etudiant.etudiantId.toString().toUpperCase().includes(input) ||
       recommendation.teacher.teacherId.toString().toUpperCase().includes(input)
     );
   }

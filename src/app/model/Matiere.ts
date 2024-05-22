@@ -2,7 +2,7 @@ import { NiveauEtude } from './NiveauEtude'; // Import the NiveauEtude model if 
 import { Teacher } from './Teacher'; // Import the Teacher model if it exists
 
 export class Matiere {
-  matiere_Id: number;
+  matiereId: number;
   code_etude: number;
   matiere_name : string;
   niveauEtude: NiveauEtude; // Assuming NiveauEtude is another model/class
@@ -10,7 +10,7 @@ export class Matiere {
  
 
   constructor(data: any = {}) {
-    this.matiere_Id = data.matiere_Id || null;
+    this.matiereId = data.matiere_Id || null;
     this.code_etude = data.code_etude || 0;
     this.niveauEtude = data.niveauEtude ? new NiveauEtude(data.niveauEtude) : null;
     this.teacher = data.teacher ? new Teacher(data.teacher) : null;
