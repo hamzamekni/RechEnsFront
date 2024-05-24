@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
       .subscribe(
         response => {
           // Handle successful sign up response
-          window.location.href = '/app-seo-agency';
+          window.location.href = '/';
         },
         error => {
           // Handle sign up error
