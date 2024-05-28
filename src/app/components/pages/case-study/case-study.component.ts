@@ -40,7 +40,6 @@ export class CaseStudyComponent implements OnInit {
       demandeDeCour.detail_demande.toUpperCase().includes(input) ||
       demandeDeCour.locale.toUpperCase().includes(input) ||
       demandeDeCour.statutDemande.toUpperCase().includes(input) ||
-      demandeDeCour.adress.adressId.toString().includes(input) ||
       demandeDeCour.matiere.matiereId.toString().includes(input) ||
       demandeDeCour.etudiant.etudiantId.toString().includes(input) ||
       demandeDeCour.teacher.teacherId.toString().includes(input)

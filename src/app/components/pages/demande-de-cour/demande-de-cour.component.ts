@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { takeUntil } from 'rxjs';
 import { Subject } from 'rxjs';
-import { AdressService } from 'src/app/adress.service';
 import { DemandeDeCourService } from 'src/app/demande-de-cour.service';
 import { EtudiantService } from 'src/app/etudiant.service';
 import { MatiereService } from 'src/app/matiere.service';
@@ -13,7 +12,6 @@ import { TeacherService } from 'src/app/teacher.service';
   styleUrl: './demande-de-cour.component.scss'
 })
 export class DemandeDeCourComponent {
-  adressIds: number[] = [];
   etudiantIds: number[] = [];
   teacherIds: number[] = [];
   matiereIds: number[] = [];
@@ -28,26 +26,20 @@ export class DemandeDeCourComponent {
     prix_min: 0,
     matiereId: '',
     etudiantId: '',
-    teacherId: '',
-    adressId: ''
+    teacherId: ''
   };
-  constructor(private demadeDeCourService: DemandeDeCourService, private adressService: AdressService,
+  constructor(private demadeDeCourService: DemandeDeCourService,
     private matiereService: MatiereService,
     private teacherService: TeacherService,
     private etudiantService: EtudiantService) { }
     ngOnInit(): void {
-      this.getAdressIds();
       this.getEtudiantIds();
       this.getTeacherIds();
       this.getMatiereIds();
-      this.demandeForm();
     }
   demandeForm(): void {
     console.log(this.demandeDeCourData)
-    if(this.demandeDeCourData.titre_demande===''){
-      alert("Please enter your first name");
-        
-      }else{
+    
         this.demadeDeCourService.demandeForm(this.demandeDeCourData)
         .subscribe(
           response => {
@@ -61,23 +53,11 @@ export class DemandeDeCourComponent {
             alert("Credentials Must Be Valid")
           }
         );
-      }
+     
     
   }
 
-  private getAdressIds(): void {
-    this.adressService.getAdressList()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(
-        (addresses: any[]) => {
-          this.adressIds = addresses.map(address => address.adressId);
-        },
-        (error) => {
-          console.error('Error fetching addresses:', error);
-          // Provide user feedback
-        }
-      );
-  }
+
 
   private getMatiereIds(): void {
     this.matiereService.getMatiereList()

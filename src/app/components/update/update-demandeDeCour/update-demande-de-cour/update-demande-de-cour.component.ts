@@ -17,7 +17,6 @@ import { TeacherService } from 'src/app/teacher.service';
 export class UpdateDemandeDeCourComponent implements OnInit, OnDestroy {
   updateDemandeDeCourForm: FormGroup;
   demandeDeCourId: number;
-  adressIds: number[] = [];
   etudiantIds: number[] = [];
   teacherIds: number[] = [];
   matiereIds: number[] = [];
@@ -28,7 +27,6 @@ export class UpdateDemandeDeCourComponent implements OnInit, OnDestroy {
     private demandeDeCourService: DemandeDeCourService,
     private route: ActivatedRoute,
     private router: Router,
-    private adressService: AdressService,
     private matiereService: MatiereService,
     private teacherService: TeacherService,
     private etudiantService: EtudiantService
@@ -36,7 +34,6 @@ export class UpdateDemandeDeCourComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initForm();
-    this.getAdressIds();
     this.getEtudiantIds();
     this.getTeacherIds();
     this.getMatiereIds();
@@ -61,9 +58,6 @@ export class UpdateDemandeDeCourComponent implements OnInit, OnDestroy {
       prix_max: [0, Validators.required],
       prix_min: [0, Validators.required],
       statutDemande: ['', Validators.required],
-      adress: this.fb.group({
-        adress_Id: ['', Validators.required]
-      }), 
       matiere: this.fb.group({
         matiere_Id: ['', Validators.required]
       }), 
@@ -76,19 +70,7 @@ export class UpdateDemandeDeCourComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getAdressIds(): void {
-    this.adressService.getAdressList()
-      .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(
-        (addresses: any[]) => {
-          this.adressIds = addresses.map(address => address.adress_Id);
-        },
-        (error) => {
-          console.error('Error fetching addresses:', error);
-          // Provide user feedback
-        }
-      );
-  }
+  
 
   private getMatiereIds(): void {
     this.matiereService.getMatiereList()

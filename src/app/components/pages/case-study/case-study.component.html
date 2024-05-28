@@ -34,7 +34,6 @@
                         <th scope="col">Prix Max</th>
                         <th scope="col">Prix Min</th>
                         <th scope="col">Statut Demande</th>
-                        <th scope="col">Adresse</th>
                         <th scope="col">Matiere</th>
                         <th scope="col">Etudiant</th>
                         <th scope="col">Teacher</th>
@@ -50,9 +49,8 @@
                         <td>{{ demandeDeCour.prix_max }}</td>
                         <td>{{ demandeDeCour.prix_min }}</td>
                         <td>{{ demandeDeCour.statutDemande }}</td>
-                        <td>{{ demandeDeCour.adress.adress_Id }}</td>
-                        <td>{{ demandeDeCour.matiere.matiere_Id }}</td>
-                        <td>{{ demandeDeCour.etudiant.etudiant_Id }}</td>
+                        <td>{{ demandeDeCour.matiere.matiereId }}</td>
+                        <td>{{ demandeDeCour.etudiant.etudiantId }}</td>
                         <td>{{ demandeDeCour.teacher.teacherId }}</td>
                         <td>
                             <button type="button" class="btn btn-outline-success" [routerLink]="['/app-update-demande-de-cour', demandeDeCour.demandeDeCour_Id]">Update</button>
